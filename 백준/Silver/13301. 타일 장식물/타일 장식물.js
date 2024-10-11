@@ -6,14 +6,14 @@ function solution() {
   
   const dp = Array.from({length: n}, () => []);
 
-  dp[0] = [1,1];
+  dp[0] = [BigInt(1), BigInt(1)];
 
   for (let i = 1; i < n; i++) {
     if (i % 2) dp[i] = [dp[i-1][0] + dp[i-1][1], dp[i-1][1]];
     else dp[i] = [dp[i-1][0], dp[i-1][0] + dp[i-1][1]]
   }
 
-  console.log((dp[n-1][0] + dp[n-1][1]) * 2);
+  console.log(((dp[n-1][0] + dp[n-1][1]) * BigInt(2)) + '');
 }
 
 solution();
